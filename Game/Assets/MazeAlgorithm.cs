@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿/*
+using UnityEngine;
 
 public abstract class MazeAlgorithm : MonoBehaviour {
     protected MazeCell[,] mazeCells;
@@ -209,3 +210,4 @@ public abstract class MazeAlgorithm : MonoBehaviour {
 
     }
 }
+*/

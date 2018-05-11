@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿/*
+    sing UnityEngine;
 
 public class MazeLoader : MonoBehaviour {
 
@@ -57,4 +58,4 @@ public class MazeLoader : MonoBehaviour {
             }
         }
     }
-}
+}*/
