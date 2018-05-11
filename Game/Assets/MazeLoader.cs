@@ -1,13 +1,7 @@
 ﻿/*
-    sing UnityEngine;
-
 public class MazeLoader : MonoBehaviour {
 
-    public int mazeRows, mazeColumns;
-    public GameObject wall;
-    public float size = 2f;
 
-    private MazeCell[,] mazeCells;
 
 	// Use this for initialization
 	void Start () {

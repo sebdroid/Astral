@@ -27,7 +27,6 @@ public class PlayerMotor : MonoBehaviour
     {
         Rb = GetComponentInParent<Rigidbody>();
         //currentplayer = GameObject.Find("PController").transform.parent.gameObject;
-        Debug.Log(currentplayer);
         if (transform.parent.tag == "Playable")
         {
             cam = gameObject.GetComponentInChildren<Camera>();
