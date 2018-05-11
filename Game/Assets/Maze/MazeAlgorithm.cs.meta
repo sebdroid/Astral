@@ -1,12 +1,11 @@
 fileFormatVersion: 2
-guid: d3064d75d5ba5614a87b56589a5d8daa
-timeCreated: 1526056493
+guid: b57a6c1aa7e4bf641a620bf4b4368934
+timeCreated: 1526072242
 licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - wall: {fileID: 1341027042615284, guid: 0b739d978cadfed4ca83eefc8cc087e5, type: 2}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -17,6 +17,8 @@ public class Maze : MonoBehaviour
     {
         size = wall.transform.localScale;
         InitMaze();
+        MazeAlgorithm mA = new GenMaze(mazeCells);
+        mA.StartGen();
     }
 
     void InitMaze()
