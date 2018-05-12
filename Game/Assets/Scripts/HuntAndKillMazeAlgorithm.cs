@@ -73,68 +73,9 @@ public class HuntAndKillMazeAlgorithm : MazeAlgorithm {
 	}
 
 
-	private bool RouteStillAvailable(int row, int column) {
-		int availableRoutes = 0;
+	
 
-		if (row > 0 && !mazeCells[row-1,column].visited) {
-			availableRoutes++;
-		}
-
-		if (row < mazeRows - 1 && !mazeCells [row + 1, column].visited) {
-			availableRoutes++;
-		}
-
-		if (column > 0 && !mazeCells[row,column-1].visited) {
-			availableRoutes++;
-		}
-
-		if (column < mazeColumns-1 && !mazeCells[row,column+1].visited) {
-			availableRoutes++;
-		}
-
-		return availableRoutes > 0;
-	}
-
-	private bool CellIsAvailable(int row, int column) {
-		if (row >= 0 && row < mazeRows && column >= 0 && column < mazeColumns && !mazeCells [row, column].visited) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	private void DestroyWallIfItExists(GameObject wall) {
-		if (wall != null) {
-			GameObject.Destroy (wall);
-		}
-	}
-
-	private bool CellHasAnAdjacentVisitedCell(int row, int column) {
-		int visitedCells = 0;
-
-		// Look 1 row up (north) if we're on row 1 or greater
-		if (row > 0 && mazeCells [row - 1, column].visited) {
-			visitedCells++;
-		}
-
-		// Look one row down (south) if we're the second-to-last row (or less)
-		if (row < (mazeRows-2) && mazeCells [row + 1, column].visited) {
-			visitedCells++;
-		}
-
-		// Look one row left (west) if we're column 1 or greater
-		if (column > 0 && mazeCells [row, column - 1].visited) {
-			visitedCells++;
-		}
-
-		// Look one row right (east) if we're the second-to-last column (or less)
-		if (column < (mazeColumns-2) && mazeCells [row, column + 1].visited) {
-			visitedCells++;
-		}
-
-		// return true if there are any adjacent visited cells to this one
-		return visitedCells > 0;
-	}
+	
 
 	private void DestroyAdjacentWall(int row, int column) {
 		bool wallDestroyed = false;

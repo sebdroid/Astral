@@ -1,14 +1,11 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(GameObject))]
 public class Maze : MonoBehaviour
 {
     [SerializeField]
     private int mazeRows, mazeColumns;
     [SerializeField]
     private GameObject wall;
-    [SerializeField]
-
     private MazeCell[,] mazeCells;
     private Vector3 size;
 
