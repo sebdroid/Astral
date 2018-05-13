@@ -1,2 +1,3 @@
-# game-project
-Just a test
+# Astral
+
+A game by sebjo.se
