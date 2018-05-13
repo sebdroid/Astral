@@ -35,28 +35,51 @@ public class GenMaze : MazeAlgorithm
 
             if ((direction == 1) && (CellAvailable(cRow - 1, cColumn)))
             {
+                DestroyWall(mazeCells[cRow, cColumn].northW);
                 DestroyWall(mazeCells[cRow - 1, cColumn].southW);
                 cRow--;
             }else if ((direction == 2) && (CellAvailable(cRow + 1, cColumn)))
             {
                 DestroyWall(mazeCells[cRow, cColumn].southW);
+                DestroyWall(mazeCells[cRow + 1, cColumn].northW);
                 cRow++;
             }else if ((direction == 3) && (CellAvailable(cRow, cColumn + 1)))
             {
                 DestroyWall(mazeCells[cRow, cColumn].eastW);
+                DestroyWall(mazeCells[cRow, cColumn + 1].westW);
                 cColumn++;
             }else if ((direction  == 4) && (CellAvailable(cRow, cColumn - 1)))
             {
                 DestroyWall(mazeCells[cRow, cColumn - 1].eastW);
+                DestroyWall(mazeCells[cRow, cColumn].westW);
                 cColumn--;
             }
+
+            mazeCells[cRow, cColumn].visited = true; //without this, there's a memory leak
+
         }
 
     }
 
     void Hunt()
     {
+        courseComplete = true;
 
+        for (int r = 0; r < mRows; r++)
+        {
+           for (int c = 0; c < mColumns; c++)
+            {
+                if ((!mazeCells[r, c].visited) && (NextToCell(r, c)))
+                {
+                    courseComplete = false;
+                    cRow = r;
+                    cColumn = c;
+                    DestroyCellWall(cRow, cColumn);
+                    mazeCells[cRow, cColumn].visited = true;
+                    return;
+                }
+            }
+        }
     }
 
     bool PathAvailable(int row, int column)
@@ -143,21 +166,25 @@ public class GenMaze : MazeAlgorithm
 
             if (((direction == 1) && (row > 0)) && (mazeCells[row - 1, column].visited))
             {
+                DestroyWall(mazeCells[row, column].northW);
                 DestroyWall(mazeCells[row - 1, column].southW);
                 destroyed = true;
             }else if (((direction == 2) && (row < (mRows - 2))) && (mazeCells[row + 1, column].visited))
             {
                 DestroyWall(mazeCells[row, column].southW);
+                DestroyWall(mazeCells[row + 1, column].northW);
                 destroyed = true;
             }
             else if (((direction == 3) && (column > 0)) && (mazeCells[row, column - 1].visited))
             {
-                DestroyWall(mazeCells[row - 1, column].eastW);
+                DestroyWall(mazeCells[row, column].westW);
+                DestroyWall(mazeCells[row, column - 1].eastW);
                 destroyed = true;
             }
-            else if (((direction == 4) && (column > (mColumns - 2))) && (mazeCells[row, column + 1].visited))
+            else if (((direction == 4) && (column < (mColumns - 2))) && (mazeCells[row, column + 1].visited))
             {
                 DestroyWall(mazeCells[row, column].eastW);
+                DestroyWall(mazeCells[row, column + 1].westW);
                 destroyed = true;
             }
         }

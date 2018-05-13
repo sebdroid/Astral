@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public abstract class MazeAlgorithm : MonoBehaviour
+public abstract class MazeAlgorithm
 {
 
     protected MazeCell[,] mazeCells;
