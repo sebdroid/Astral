@@ -23,7 +23,7 @@ Make sure you have the below requirements before starting:
 ## Downloads
 
 - [:sparkles: Download Source Code](https://github.com/sebdroid/Astral/archive/master.zip)
-- [:fire: Download Game](needs to be linked)
+- [:fire: Download Game](https://github.com/sebdroid/Astral/releases)
 - Clone the repository locally:
 
 ```bash
