@@ -10,9 +10,6 @@ public class PlayerMotor : MonoBehaviour
     [SerializeField]
     private Camera cam;
 
-    [SerializeField]
-    private GameObject currentplayer;
-
     //Sets initial values to 0
     private Vector3 velocity = Vector3.zero;
     private Vector3 rotation = Vector3.zero;

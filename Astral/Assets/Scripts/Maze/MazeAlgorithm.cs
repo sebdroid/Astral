@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-public abstract class MazeAlgorithm
+﻿public abstract class MazeAlgorithm
 {
 
     protected MazeCell[,] mazeCells;

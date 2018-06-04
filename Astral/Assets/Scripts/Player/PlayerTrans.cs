@@ -7,9 +7,6 @@ public class PlayerTrans : MonoBehaviour {
     [SerializeField]
     private Camera cam;
 
-    [SerializeField]
-    public Transform playern;
-
     private float range = 100f;
 
     [SerializeField]
