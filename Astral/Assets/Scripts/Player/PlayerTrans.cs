@@ -5,6 +5,9 @@ public class PlayerTrans : MonoBehaviour {
     private PlayerMotor Motor;
 
     [SerializeField]
+    private Object sparePlayer;
+
+    [SerializeField]
     private Camera cam;
 
     private float range = 100f;
@@ -27,19 +30,32 @@ public class PlayerTrans : MonoBehaviour {
     {
 		if (Input.GetButtonDown("Fire1"))
         {
-            Target();
+            Target(1);
+        }else if (Input.GetButtonDown("Fire2")){
+            Target(2);
         }
 	}
 
-    void Target()
+    void Target(int mode)
     {
         RaycastHit hit;
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, range, mask))
         {
-            if (hit.transform.tag == "Playable")
+            if (mode == 1)
             {
-                Debug.Log("We hit " + hit.collider.name);
-                Motor.SwitchChar(hit.transform);
+                if (hit.transform.tag == "Playable")
+                {
+                    Debug.Log("We hit " + hit.collider.name);
+                    Motor.SwitchChar(hit.transform);
+                }
+            }
+            else if (mode == 2)
+            {
+                if (true)
+                {
+                    Debug.Log("Spawning clone...");
+                    Instantiate(sparePlayer, new Vector3(hit.point.x, hit.point.y+1, hit.point.z), Quaternion.identity);
+                }
             }
         }
     }
