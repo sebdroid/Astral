@@ -62,9 +62,10 @@ public class PlayerMotor : MonoBehaviour
 
     void FixedUpdate()
     {
+        //Try moving out of fixed update into apply rotation
         if (transform.parent.tag == "Auto")
         {
-            transform.parent.transform.rotation = GameObject.Find("PController").transform.parent.gameObject.transform.rotation;
+           transform.parent.rotation = GameObject.Find("PController").transform.parent.rotation;
         }
         ApplyMovement();
         ApplyRotation();

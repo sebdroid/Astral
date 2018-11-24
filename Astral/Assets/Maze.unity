@@ -437,6 +437,12 @@ Prefab:
       propertyPath: m_Constraints
       value: 112
       objectReference: {fileID: 0}
+    - target: {fileID: 114832819991624202, guid: a90a038942499ec40ab09e631143cbe6,
+        type: 2}
+      propertyPath: sparePlayer
+      value: 
+      objectReference: {fileID: 1899545713611306, guid: b0e990e5249e5d340a47d399dd23d951,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a90a038942499ec40ab09e631143cbe6, type: 2}
   m_IsPrefabAsset: 0
