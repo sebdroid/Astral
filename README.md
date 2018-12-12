@@ -1,5 +1,7 @@
 # Astral
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c3aa42be425f483cbcbe72869489b122)](https://www.codacy.com?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=sebdroid/Astral&amp;utm_campaign=Badge_Grade)
+
 Puzzle Game?
 
 Made by Seb
