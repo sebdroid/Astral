@@ -1,0 +1,12 @@
+{
+"companyName": "sebjo.se",
+"productName": "Astral",
+"dataUrl": "Astral.data.unityweb",
+"wasmCodeUrl": "Astral.wasm.code.unityweb",
+"wasmFrameworkUrl": "Astral.wasm.framework.unityweb",
+"TOTAL_MEMORY": 268435456,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Light",
+"backgroundColor": "#828080"
+}
