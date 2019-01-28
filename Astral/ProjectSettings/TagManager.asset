@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Playable
   - Auto
+  - Playing
+  - DCP1
   layers:
   - Default
   - TransparentFX
@@ -16,7 +18,7 @@ TagManager:
   - 
   - 
   - Trans
-  - 
+  - Shielding
   - 
   - 
   - 

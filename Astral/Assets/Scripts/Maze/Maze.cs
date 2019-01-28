@@ -48,6 +48,7 @@ public class Maze : MonoBehaviour
                 }else if ((r == mazeRows-1) && (c == mazeColumns - 1))
                 {
                     mazeCells[r, c].floor.GetComponent<Renderer>().material.color = EndColour;
+                    mazeCells[r, c].floor.tag = "DCP1";
                 }
 
                 if (c == 0)

@@ -7,6 +7,8 @@ public class PlayerTrans : MonoBehaviour {
     [SerializeField]
     private Object sparePlayer;
 
+    public bool canCreate = false;
+
     [SerializeField]
     private Camera cam;
 
@@ -31,7 +33,7 @@ public class PlayerTrans : MonoBehaviour {
 		if (Input.GetButtonDown("Fire1"))
         {
             Target(1);
-        }else if (Input.GetButtonDown("Fire2")){
+        }else if ((Input.GetButtonDown("Fire2")) && (canCreate)){
             Target(2);
         }
 	}

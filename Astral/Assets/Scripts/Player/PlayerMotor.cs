@@ -39,7 +39,9 @@ public class PlayerMotor : MonoBehaviour
     //allows player to switch locally
     public void SwitchChar(Transform playernew)
     {
+        transform.parent.tag = "Playable";
         transform.SetParent(playernew, false);
+        playernew.tag = "Playing";
         CalibrateControls();
     }
 
