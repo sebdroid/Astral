@@ -305,15 +305,15 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1213381827232762}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalRotation: {x: 0, y: 0.38268343, z: 0, w: 0.92387956}
+  m_LocalPosition: {x: 0, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4139022584775438}
   - {fileID: 4315222172704074}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 45, z: 0}
 --- !u!4 &4602542570355698
 Transform:
   m_ObjectHideFlags: 1
@@ -412,7 +412,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967039
+    m_Bits: 567
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -822,11 +822,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db393ee4f1a01574fa5b4703f5201110, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sparePlayer: {fileID: 0}
+  sparePlayer: {fileID: 1899545713611306, guid: b0e990e5249e5d340a47d399dd23d951,
+    type: 2}
+  canCreate: 0
   cam: {fileID: 0}
   mask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 311
 --- !u!114 &114928847088000002
 MonoBehaviour:
   m_ObjectHideFlags: 1

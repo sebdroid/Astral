@@ -7,7 +7,7 @@ public class PlayerTrans : MonoBehaviour {
     [SerializeField]
     private Object sparePlayer;
 
-    public bool canCreate = false;
+    public bool canCreate;
 
     [SerializeField]
     private Camera cam;
@@ -23,7 +23,7 @@ public class PlayerTrans : MonoBehaviour {
         cam = gameObject.GetComponentInChildren<Camera>();
         if (cam == null)
         {
-            Debug.LogError("No camera defined?");
+            Debug.LogError("No camera defined");
             this.enabled = false;
         }
     }
@@ -47,7 +47,6 @@ public class PlayerTrans : MonoBehaviour {
             {
                 if (hit.transform.tag == "Playable")
                 {
-                    Debug.Log("We hit " + hit.collider.name);
                     Motor.SwitchChar(hit.transform);
                 }
             }

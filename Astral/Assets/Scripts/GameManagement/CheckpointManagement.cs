@@ -8,7 +8,7 @@ public class CheckpointManagement : MonoBehaviour
     [SerializeField]
     private Object spare;
 
-    private bool DCP1 = false;
+    private bool DCP1;
 
     // Use this for initialization
     void Start()
@@ -26,7 +26,6 @@ public class CheckpointManagement : MonoBehaviour
     {
         if (obj.CompareTag("Auto"))
         {
-            Debug.Log("asd");
             Destroy(obj.gameObject);
             Debug.Log("Spawning clone...");
             Instantiate(spare, new Vector3(obj.gameObject.transform.position.x, obj.gameObject.transform.position.y, obj.gameObject.transform.position.z), Quaternion.identity);
@@ -37,9 +36,9 @@ public class CheckpointManagement : MonoBehaviour
     {
         if ((obj.CompareTag("Playing")) && (!DCP1))
         {
-            Debug.Log("asd");
             Destroy(GameObject.FindGameObjectWithTag("DCP1"));
             DCP1 = true;
+            GameObject.FindGameObjectWithTag("Playing").GetComponentInChildren<PlayerTrans>().canCreate = true;
         }
     }
 }
