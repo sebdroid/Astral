@@ -8,6 +8,10 @@ TagManager:
   - Auto
   - Playing
   - DCP1
+  - DCP2
+  - DCP3
+  - DCP
+  - DCP4
   layers:
   - Default
   - TransparentFX

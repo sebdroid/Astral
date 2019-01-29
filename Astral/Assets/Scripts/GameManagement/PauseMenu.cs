@@ -4,10 +4,13 @@ using UnityEngine;
 public class PauseMenu : MonoBehaviour {
 
     // Use this for initialization
-    public static bool IsPaused = false;
+    private static bool IsPaused = false;
+    public bool Pausable = true;
 
-    public GameObject pauseMenuUI;
-    public GameObject inGameUI;
+    [SerializeField]
+    private GameObject pauseMenuUI;
+    [SerializeField]
+    private GameObject inGameUI;
 	
 	// Update is called once per frame
 	void Update () {
@@ -17,7 +20,7 @@ public class PauseMenu : MonoBehaviour {
             {
                 Resume();
             }
-            else
+            else if(Pausable)
             {
                 Pause();
             }
@@ -48,8 +51,13 @@ public class PauseMenu : MonoBehaviour {
     public void LoadMenu()
     {
         Time.timeScale = 1f;
-        Debug.Log("Menu");
         SceneManager.LoadScene("Menu");
+    }
+
+    public void LoadLeaderboard()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Leaderboard");
     }
 
     public void QuitGame()

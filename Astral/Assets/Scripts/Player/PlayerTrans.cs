@@ -19,6 +19,8 @@ public class PlayerTrans : MonoBehaviour {
 
     void Start()
     {
+       // Debug.Log(SystemInfo.deviceUniqueIdentifier);
+        transform.hasChanged = false;
         Motor = GetComponent<PlayerMotor>();
         cam = gameObject.GetComponentInChildren<Camera>();
         if (cam == null)
@@ -36,7 +38,11 @@ public class PlayerTrans : MonoBehaviour {
         }else if ((Input.GetButtonDown("Fire2")) && (canCreate)){
             Target(2);
         }
-	}
+        if (transform.hasChanged)
+        {
+            GameObject.Find("GameManagement").GetComponent<GameManagement>().timer = true;
+        }
+    }
 
     void Target(int mode)
     {
@@ -56,6 +62,7 @@ public class PlayerTrans : MonoBehaviour {
                 {
                     Debug.Log("Spawning clone...");
                     Instantiate(sparePlayer, new Vector3(hit.point.x, hit.point.y+1, hit.point.z), Quaternion.identity);
+                    GameObject.Find("GameManagement").GetComponent<GameManagement>().clones++;
                 }
             }
         }
