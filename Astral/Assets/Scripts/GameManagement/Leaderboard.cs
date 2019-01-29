@@ -11,7 +11,6 @@ public class Leaderboard : MonoBehaviour
     [SerializeField]
     Text leaderboard;
 
-    const string privateCode = "IE_PVZHSI0GTmfzYKOIYBw7noih_Q5q0yLMyQ6xyqn5w";
     const string publicCode = "5c4f855ab6397e0c24c873d4";
     const string webURL = "http://dreamlo.com/lb/";
 
@@ -40,7 +39,7 @@ public class Leaderboard : MonoBehaviour
 
     void sortLeaderboard(string leaderboard)
     {
-        string[] records = leaderboard.Split(new char['\n'], System.StringSplitOptions.RemoveEmptyEntries);
+        string[] records = leaderboard.Split(new char[]{'\n'}, System.StringSplitOptions.RemoveEmptyEntries);
 
         playerScore[] scores = new playerScore[records.Length];
         for (int i = 0; i < records.Length; i++)
