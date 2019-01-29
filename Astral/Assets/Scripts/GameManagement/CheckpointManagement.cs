@@ -69,7 +69,7 @@ public class CheckpointManagement : MonoBehaviour
     {
         if ((obj.CompareTag("Playing")) && (!DCP1))
         {
-            Destroy(GameObject.FindGameObjectWithTag("DCP1"));
+            housekeep("DCP1");
             DCP1 = true;
             GameObject.FindGameObjectWithTag("Playing").GetComponentInChildren<PlayerTrans>().canCreate = true;
         }
