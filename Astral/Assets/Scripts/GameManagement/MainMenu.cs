@@ -19,4 +19,13 @@ public class MainMenu : MonoBehaviour {
 #endif
     }
 
+    public void Options()
+    {
+        SceneManager.LoadScene("Options");
+    }
+
+    public void Leaderboard()
+    {
+        SceneManager.LoadScene("Leaderboard");
+    }
 }

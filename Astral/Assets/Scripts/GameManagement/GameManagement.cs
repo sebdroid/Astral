@@ -49,7 +49,7 @@ public class GameManagement : MonoBehaviour {
         END.transform.Find("Score").GetComponent<Text>().text = "SCORE: " + score;
         END.transform.Find("Message").GetComponent<Text>().text = message;
         END.SetActive(true);
-        StartCoroutine(uploadScore((SystemInfo.deviceUniqueIdentifier + ".start." + "seb"), score));
+        StartCoroutine(uploadScore((SystemInfo.deviceUniqueIdentifier + ".start." + PlayerPrefs.GetString("username", "Player")), score));
     }
 
     IEnumerator uploadScore(string username, int score)
