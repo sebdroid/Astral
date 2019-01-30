@@ -9,10 +9,13 @@ public class Options : MonoBehaviour {
     [SerializeField]
     InputField username;
 
+    [SerializeField]
+    Slider mouseSensitivity;
+
 	// Use this for initialization
 	void Start() {
         username.text = PlayerPrefs.GetString("username", "Player");
-        //username.text.
+        mouseSensitivity.value = PlayerPrefs.GetFloat("mouseSensitivity", 0.1f);
 	}
 
     public void LoadMenu()
@@ -24,5 +27,10 @@ public class Options : MonoBehaviour {
     public void SaveUsername(Text text)
     {
         PlayerPrefs.SetString("username", text.text);
+    }
+
+    public void SaveSensitivity(Slider slider)
+    {
+        PlayerPrefs.SetFloat("mouseSensitivity", slider.value);
     }
 }

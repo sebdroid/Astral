@@ -6,7 +6,8 @@ public class MainMenu : MonoBehaviour {
     public void Play()
     {
         Time.timeScale = 1f;
-        Debug.Log("Play");
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         SceneManager.LoadScene("Maze");
     }
 

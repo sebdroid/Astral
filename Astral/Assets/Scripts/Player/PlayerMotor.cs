@@ -13,7 +13,12 @@ public class PlayerMotor : MonoBehaviour
     //Sets initial values to 0
     private Vector3 velocity = Vector3.zero;
     private Vector3 rotation = Vector3.zero;
-    private Vector3 camrotation = Vector3.zero;
+
+    private float camrotation = 0f;
+    private float curCamRotation = 0f;
+
+    [SerializeField]
+    private float camLimit = 85f;
 
     //Also for debugging
     [SerializeField]
@@ -55,7 +60,7 @@ public class PlayerMotor : MonoBehaviour
         rotation = rotationinp;
     }
 
-    public void RotateCamera(Vector3 camrotationinp)
+    public void RotateCamera(float camrotationinp)
     {
         camrotation = camrotationinp;
     }
@@ -87,7 +92,12 @@ public class PlayerMotor : MonoBehaviour
 
         if (cam != null)
         {
-            cam.transform.Rotate(-camrotation);
+            // Set our rotation and clamp it
+            curCamRotation -= camrotation;
+            curCamRotation = Mathf.Clamp(curCamRotation, -camLimit, camLimit);
+
+            //Apply our rotation to the transform of our camera
+            cam.transform.localEulerAngles = new Vector3(curCamRotation, 0f, 0f);
         }
     }
 

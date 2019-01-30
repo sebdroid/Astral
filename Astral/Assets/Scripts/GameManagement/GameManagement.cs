@@ -40,7 +40,7 @@ public class GameManagement : MonoBehaviour {
         inGameUI.SetActive(false);
         if (!death)
         {
-            score = (8000 / (int)time) / clones;
+            score = (10000 / (int)time) / clones;
         }
         else
         {

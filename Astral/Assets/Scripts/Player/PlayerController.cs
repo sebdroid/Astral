@@ -7,13 +7,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float speed = 5f;
     [SerializeField]
-    private float lookSensitivity = 1f;
+    private float lookSensitivity;
 
     private PlayerMotor Motor;
 
     void Start()
     {
         Motor = GetComponent<PlayerMotor>();
+        lookSensitivity = PlayerPrefs.GetFloat("mouseSensitivity", 0.1f);
     }
 
     void Update()
@@ -46,7 +47,7 @@ public class PlayerController : MonoBehaviour
 
         float xRot = Input.GetAxisRaw("Mouse Y");
 
-        Vector3 camrotation = new Vector3(xRot, 0f, 0f) * lookSensitivity;
+        float camrotation = xRot * lookSensitivity;
 
         //Apply rotation
 
