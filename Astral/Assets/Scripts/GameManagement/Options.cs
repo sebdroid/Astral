@@ -15,7 +15,7 @@ public class Options : MonoBehaviour {
 	// Use this for initialization
 	void Start() {
         username.text = PlayerPrefs.GetString("username", "Player");
-        mouseSensitivity.value = PlayerPrefs.GetFloat("mouseSensitivity", 0.1f);
+        mouseSensitivity.value = PlayerPrefs.GetFloat("mouseSensitivity", 1.0f);
 	}
 
     public void LoadMenu()

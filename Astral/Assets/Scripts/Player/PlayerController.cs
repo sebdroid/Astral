@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         Motor = GetComponent<PlayerMotor>();
-        lookSensitivity = PlayerPrefs.GetFloat("mouseSensitivity", 0.1f);
+        lookSensitivity = PlayerPrefs.GetFloat("mouseSensitivity", 1.0f);
     }
 
     void Update()
