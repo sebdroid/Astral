@@ -1,7 +1,8 @@
 ﻿using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class PauseMenu : MonoBehaviour {
+public class PauseMenu : MonoBehaviour
+{
 
     // Use this for initialization
     private static bool IsPaused = false;
@@ -11,22 +12,23 @@ public class PauseMenu : MonoBehaviour {
     private GameObject pauseMenuUI;
     [SerializeField]
     private GameObject inGameUI;
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (IsPaused)
             {
                 Resume();
             }
-            else if(Pausable)
+            else if (Pausable)
             {
                 Pause();
             }
         }
-		
-	}
+
+    }
 
     public void Resume()
     {

@@ -4,11 +4,12 @@ using UnityEngine.Networking;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameManagement : MonoBehaviour {
+public class GameManagement : MonoBehaviour
+{
 
     public int clones;
 
-    int score;
+    float score;
 
     public bool timer;
     float time;
@@ -23,7 +24,8 @@ public class GameManagement : MonoBehaviour {
     const string webURL = "http://dreamlo.com/lb/";
 
     // Update is called once per frame
-    void Update () {
+    void Update()
+    {
         if (timer)
         {
             time += Time.deltaTime;
@@ -40,16 +42,16 @@ public class GameManagement : MonoBehaviour {
         inGameUI.SetActive(false);
         if (!death)
         {
-            score = (10000 / (int)time) / clones;
+            score = (23000 / time) / clones;
         }
         else
         {
             score = 0;
         }
-        END.transform.Find("Score").GetComponent<Text>().text = "SCORE: " + score;
+        END.transform.Find("Score").GetComponent<Text>().text = "SCORE: " + (int)score;
         END.transform.Find("Message").GetComponent<Text>().text = message;
         END.SetActive(true);
-        StartCoroutine(uploadScore((SystemInfo.deviceUniqueIdentifier + ".start." + PlayerPrefs.GetString("username", "Player")), score));
+        StartCoroutine(uploadScore((SystemInfo.deviceUniqueIdentifier + ".start." + PlayerPrefs.GetString("username", "Player")), (int)score));
     }
 
     IEnumerator uploadScore(string username, int score)

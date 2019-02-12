@@ -1,25 +1,25 @@
 ﻿using UnityEngine;
 
-public class PlayerTrans : MonoBehaviour {
+public class PlayerTrans : MonoBehaviour
+{
 
-    private PlayerMotor Motor;
-
-    [SerializeField]
-    private Object sparePlayer;
-
-    public bool canCreate;
+    private PlayerMotor Motor; //Reference to movement script
 
     [SerializeField]
-    private Camera cam;
+    private Object sparePlayer; //Reference to clone prefab
 
-    private float range = 100f;
+    public bool canCreate; //Keeps track of whether the player can create clones in the current stage
 
     [SerializeField]
-    private LayerMask mask;
+    private Camera cam; //Reference to the child camera of the player
+
+    private float range = 100f; //Stores the maximum range of the switching raycast
+
+    [SerializeField]
+    private LayerMask mask; //Determines what objects the raycast can pass through
 
     void Start()
     {
-       // Debug.Log(SystemInfo.deviceUniqueIdentifier);
         transform.hasChanged = false;
         Motor = GetComponent<PlayerMotor>();
         cam = gameObject.GetComponentInChildren<Camera>();
@@ -29,13 +29,15 @@ public class PlayerTrans : MonoBehaviour {
             this.enabled = false;
         }
     }
-	
-	void Update()
+
+    void Update()
     {
-		if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1"))
         {
             Target(1);
-        }else if ((Input.GetButtonDown("Fire2")) && (canCreate)){
+        }
+        else if ((Input.GetButtonDown("Fire2")) && (canCreate))
+        {
             Target(2);
         }
         if (transform.hasChanged)
@@ -51,19 +53,15 @@ public class PlayerTrans : MonoBehaviour {
         {
             if (mode == 1)
             {
-                if (hit.transform.tag == "Playable")
+                if (hit.transform.CompareTag("Playable"))
                 {
                     Motor.SwitchChar(hit.transform);
                 }
             }
             else if (mode == 2)
             {
-                if (true)
-                {
-                    Debug.Log("Spawning clone...");
-                    Instantiate(sparePlayer, new Vector3(hit.point.x, hit.point.y+1, hit.point.z), Quaternion.identity);
-                    GameObject.Find("GameManagement").GetComponent<GameManagement>().clones++;
-                }
+                Instantiate(sparePlayer, new Vector3(hit.point.x, hit.point.y + 1, hit.point.z), Quaternion.identity);
+                GameObject.Find("GameManagement").GetComponent<GameManagement>().clones++;
             }
         }
     }

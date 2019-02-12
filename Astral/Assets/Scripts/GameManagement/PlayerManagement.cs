@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerManagement : MonoBehaviour {
+public class PlayerManagement : MonoBehaviour
+{
 
     private GameManagement game;
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         if (transform.position.y <= -5)
         {
             if (gameObject.CompareTag("Playing"))
